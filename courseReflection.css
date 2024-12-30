@@ -1,0 +1,52 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.navigation
+{
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 0.35rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: aqua;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav a
+{
+    height: 2.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #282c3f;
+    letter-spacing: .3px;
+    font-weight: 600;
+    font-size: smaller;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+nav a:hover
+{
+   
+    border: 1px solid white;
+    border-radius: 5px ;
+    background-color: rgb(161, 249, 249);
+    z-index: 4;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.TeamInformation
+{
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+.Indivdual
+{
+    height: 20rem;
+    width: 20rem;
+    border: 1px solid;
+}
+

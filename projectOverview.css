@@ -1,0 +1,92 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.webHead
+{
+    padding: 0 1rem 0 1rem;
+   background-color: rgb(132, 230, 243);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+  
+   
+}
+.navigation
+{
+    display: flex;
+    padding-top: -0.65rem;
+    padding-bottom: 0.35rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(132, 230, 243);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 1px solid rgb(129, 222, 238);
+}
+nav a
+{
+    height: 1.8rem;
+    padding-top: 1rem;
+    width: 10rem;
+    text-align: center;
+    text-decoration: none;
+    color: #282c3f;
+    font-weight: 600;
+    font-size: smaller;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+nav a:hover
+{
+   color: purple;
+   border-bottom: 1px solid purple;
+}
+.overview
+{
+    margin: 0.5rem;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px 4px rgba(0, 0, 0, 0.2), 20px 20px 20px 10px rgba(0, 0, 0, 0.19);
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #54595d;
+}
+.problemSpace
+{
+    margin: 2rem 0.5rem 0.5rem 0.5rem;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 20px 20px 20px 20px rgba(0, 0, 0, 0.19);
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #54595d;
+
+}
+.portfolio
+{
+    margin: 2rem 0.5rem 0.5rem 0.5rem;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 20px 20px 20px 20px rgba(0, 0, 0, 0.19);
+
+}
+.details
+{
+    margin: 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 20px 20px 20px 20px rgba(0, 0, 0, 0.19);
+  
+}
+.details:hover
+{
+    
+    background-color: #e8f5e9;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 20px 20px 20px 20px rgba(0, 0, 0, 0.19);
+    background-color: aqua;
+}

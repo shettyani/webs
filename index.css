@@ -1,0 +1,223 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+.webHead
+{
+    padding: 0 1rem 0 1rem;
+   background-color: rgb(132, 230, 243);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+  
+   
+}
+.navigation
+{
+    display: flex;
+    padding-top: -0.65rem;
+    padding-bottom: 0.35rem;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(132, 230, 243);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 1px solid rgb(129, 222, 238);
+}
+nav a
+{
+    height: 1.8rem;
+    padding-top: 1rem;
+    width: 10rem;
+    text-align: center;
+    text-decoration: none;
+    color: #282c3f;
+    font-weight: 600;
+    font-size: smaller;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+nav a:hover
+{
+   color: purple;
+   border-bottom: 1px solid purple;
+}
+.Introduction
+{
+    margin: 1.5rem;
+    padding: 2rem;
+    
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #54595d
+}
+h2
+{
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid aqua;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+th {
+    background: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    position: sticky;
+    top: 0;
+}
+td {
+    font-size: 1rem;
+    color: #555;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #e8f5e9;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: transform 0.3s, background-color 0.3s;
+}
+td:first-child {
+    font-weight: bold;
+    color: #333;
+}
+td {
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+    th, td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+.table
+{
+    margin: 0.3rem;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    
+
+}
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
+}
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 4px;
+}
+.scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.scroll-item {
+    flex: 0 0 80%; 
+    max-width: 300px; 
+    text-align: center;
+    scroll-snap-align: center; 
+}
+.scroll-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+.scroll-item img:hover {
+    transform: scale(1.1);
+}
+.scroll-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+.applications
+{
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #54595d;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 18px 18px 0 rgba(0, 0, 0, 0.19);
+
+}
+.End
+{
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #54595d;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+footer {
+    background-color: #333333;
+    border: 4px solid;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+footer a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffd700;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+footer .contact-info {
+    margin-bottom: 15px;
+}
