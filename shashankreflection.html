@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Course Learning Reflections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f4419a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reflection {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.reflection:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #f4419a;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fbe9f2;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4419a;
+    color: white;
+}
+
+a {
+    color: #f4419a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p, ul li {
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Course Learning Reflections</h1>
+        <p>Reflections on algorithm design and analysis concepts with an emphasis on natural phenomena, space and time efficiency, and problem-solving strategies.</p>
+    </header>
+
+    <section>
+        <div class="reflection">
+            <h2>1) Problems in Nature (Iteration, Recursion, Backtracking)</h2>
+            <p><strong>Iteration:</strong> Looping structures, e.g., calculating factorial or Fibonacci sequences.</p>
+            <p><strong>Recursion:</strong> Divide-and-conquer problems like merging two sorted arrays or solving mazes.</p>
+            <p><strong>Backtracking:</strong> Puzzle solving, such as Sudoku or the N-Queens problem.</p>
+        </div>
+
+        <div class="reflection">
+            <h2>2) Space and Time Efficiency</h2>
+            <p><strong>Space Efficiency:</strong> Refers to how efficiently an algorithm utilizes memory resources.</p>
+            <p><strong>Time Efficiency:</strong> Indicates how quickly an algorithm performs its task.</p>
+            <p><strong>Importance:</strong> 
+                <ul>
+                    <li>Faster Results and Enhanced User Satisfaction.</li>
+                    <li>Better Scalability: Effectively managing larger and more complex data.</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="reflection">
+            <h2>3) Different Classes of Problems and Orders of Growth</h2>
+            <p>Orders of growth represent the efficiency of algorithms:</p>
+            <table>
+                <tr>
+                    <th>Problem Type</th>
+                    <th>Order of Growth</th>
+                </tr>
+                <tr>
+                    <td>Constant Time</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Logarithmic Time</td>
+                    <td>O(log n)</td>
+                </tr>
+                <tr>
+                    <td>Linear Time</td>
+                    <td>O(n)</td>
+                </tr>
+                <tr>
+                    <td>Linear-Logarithmic Time</td>
+                    <td>O(n log n)</td>
+                </tr>
+                <tr>
+                    <td>Quadratic Time</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Cubic Time</td>
+                    <td>O(n³)</td>
+                </tr>
+                <tr>
+                    <td>Exponential Time</td>
+                    <td>O(2^n)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="reflection">
+            <h2>4) Design Principles and Tree Data Structures</h2>
+            <p><strong>Tree:</strong> A hierarchical, non-linear data structure with a root node and child nodes forming a parent-child relationship.</p>
+            <p><strong>Binary Search Tree (BST):</strong> A tree where each node has at most two children, and the left child is smaller while the right child is larger.</p>
+            <p><strong>AVL Tree:</strong> A self-balancing binary search tree that maintains a height difference of no more than one between subtrees.</p>
+            <p><strong>2-3 Tree:</strong> A balanced tree where each node can have two or three children and stores one or two keys.</p>
+            <p><strong>Red-Black Tree:</strong> A binary search tree where each node is colored either red or black to maintain balance through specific rules.</p>
+            <p><strong>Trie:</strong> A tree-like structure used for efficient text search, where each node represents a character in a word.</p>
+            <p><strong>Heap:</strong> A complete binary tree used in priority queues where the parent node is either larger or smaller than its children, depending on the heap type.</p>
+        </div>
+
+        <div class="reflection">
+            <h2>5) Array Query Algorithms and Applications</h2>
+            <p>Algorithms like segment trees and binary indexed trees efficiently solve range query problems. Applications include:</p>
+            <ul>
+                <li><strong>Range Sum Queries:</strong> Used in financial analytics.</li>
+                <li><strong>Sparse Tables:</strong> For static range minimum/maximum queries in competitive programming.</li>
+            </ul>
+        </div>
+
+        <div class="reflection">
+            <h2>6) Difference Between Trees and Graphs and Their Traversals</h2>
+            <table>
+                <tr>
+                    <th>TREES</th>
+                    <th>GRAPHS</th>
+                </tr>
+                <tr>
+                    <td>A special type of graph with no cycles, used for hierarchical data representation (e.g., file systems).</td>
+                    <td>General structures that can represent networks, with or without cycles (e.g., social networks).</td>
+                </tr>
+                <tr>
+                    <td>Traversals: Inorder, preorder, postorder.</td>
+                    <td>Traversals: BFS, DFS.</td>
+                </tr>
+                <tr>
+                    <td>Applications: Parse trees in compilers.</td>
+                    <td>Applications: Routing algorithms in networks.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="reflection">
+            <h2>7) Sorting and Searching Algorithms</h2>
+            <h3>Sorting Algorithms:</h3>
+            <ul>
+                <li>Bubble Sort</li>
+                <li>Selection Sort</li>
+                <li>Insertion Sort</li>
+                <li>Merge Sort</li>
+                <li>Quick Sort</li>
+                <li>Heap Sort</li>
+            </ul>
+            <h3>Searching Algorithms:</h3>
+            <ul>
+                <li>Linear Search</li>
+                <li>Binary Search</li>
+                <li>Hashing</li>
+                <li>BFS and DFS</li>
+            </ul>
+        </div>
+
+        <div class="reflection">
+            <h2>8) Importance of Graph Algorithms</h2>
+            <h3>Spanning Trees:</h3>
+            <ul>
+                <li>Minimum Spanning Tree (Prim’s, Kruskal’s): Applications include Network Design and Circuit Layout.</li>
+            </ul>
+
+            <h3>Shortest Paths:</h3>
+            <ul>
+                <li>Dijkstra’s Algorithm: Routing in GPS Systems.</li>
+                <li>Floyd-Warshall Algorithm: Network Analysis.</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
