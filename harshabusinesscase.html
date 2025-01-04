@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Matching in Hospital Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>String Matching in Hospital Management</h1>
+</header>
+
+<main>
+    <section>
+        <h2>Introduction to String Matching</h2>
+        <p>String matching is the process of finding one or more occurrences of a substring (pattern) within a larger string (text). In a hospital environment, this concept is applied to retrieve patient details based on an input query. The query may consist of a patient's name, ID, or other identifying information.</p>
+    </section>
+
+    <section>
+        <h2>Use Case in Hospitals</h2>
+        <p>When patients or their relatives visit a hospital, the staff often need to search for the relevant patient details from the database. The details may include:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, age, gender, contact details.</li>
+            <li><strong>Medical Records:</strong> Diagnosis, treatment history, medication.</li>
+            <li><strong>Financial Details:</strong> Billing information and insurance claims.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Types of String Matching</h2>
+        <p>There are two primary types of string matching techniques:</p>
+        <h3>Exact String Matching</h3>
+        <ul>
+            <li>Matches the query exactly as it appears in the database.</li>
+            <li>Suitable for precise searches like patient IDs or exact names.</li>
+            <li><strong>Algorithms:</strong> Knuth-Morris-Pratt (KMP), Rabin-Karp, Boyer-Moore.</li>
+        </ul>
+        <h3>Approximate String Matching</h3>
+        <ul>
+            <li>Allows for minor mismatches or typos.</li>
+            <li>Useful for fuzzy searches or incomplete queries.</li>
+            <li><strong>Algorithms:</strong> Levenshtein Distance, Fuzzy Matching.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Key Requirements in a Hospital Environment</h2>
+        <ul>
+            <li><strong>Speed and Efficiency:</strong> Rapid searches to reduce waiting times.</li>
+            <li><strong>Scalability:</strong> Handle large and growing databases.</li>
+            <li><strong>Accuracy:</strong> Ensure correct records are retrieved.</li>
+            <li><strong>Error Tolerance:</strong> Handle spelling mistakes or incomplete input.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Knuth-Morris-Pratt (KMP) Algorithm</h2>
+        <p>The KMP algorithm is efficient for exact string matching. It uses preprocessing to build a prefix table, enabling the algorithm to skip redundant checks.</p>
+        <h3>Steps of the KMP Algorithm</h3>
+        <ol>
+            <li><strong>Preprocessing:</strong> Build the Longest Prefix Suffix (LPS) array.</li>
+            <li><strong>Search Phase:</strong> Compare the pattern with the text and use the LPS array to shift patterns efficiently.</li>
+        </ol>
+        <h3>Advantages of KMP</h3>
+        <ul>
+            <li>Time complexity: <code>O(n + m)</code>, where <code>n</code> is the text length and <code>m</code> is the pattern length.</li>
+            <li>Efficient for large datasets.</li>
+            <li>Eliminates redundant comparisons.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Approximate Matching Techniques</h2>
+        <h3>Levenshtein Distance</h3>
+        <p>Measures the minimum number of edits required to transform one string into another. Example: Distance between "John" and "Jon" is 1.</p>
+        <h3>Fuzzy Matching</h3>
+        <p>Uses scoring systems to evaluate string similarity, useful for names with typos.</p>
+    </section>
+
+    <section>
+        <h2>Implementation Example</h2>
+        <h3>Patient Database</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Contact</th>
+                    <th>Medical History</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P001</td>
+                    <td>John Smith</td>
+                    <td>45</td>
+                    <td>1234567890</td>
+                    <td>Hypertension</td>
+                </tr>
+                <tr>
+                    <td>P002</td>
+                    <td>Jane Doe</td>
+                    <td>32</td>
+                    <td>0987654321</td>
+                    <td>Diabetes</td>
+                </tr>
+                <tr>
+                    <td>P003</td>
+                    <td>Alice Ray</td>
+                    <td>29</td>
+                    <td>1122334455</td>
+                    <td>Migraine</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>String matching algorithms like KMP and approximate methods are vital in hospital management systems. Efficiently retrieving patient records enhances operational workflows and ensures high-quality care. By balancing speed, accuracy, and scalability, these techniques meet dynamic healthcare demands.</p>
+    </section>
+</main>
+
+</body>
+</html>

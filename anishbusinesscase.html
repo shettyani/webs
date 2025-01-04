@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Ambulance Routing System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            padding: 0.5rem;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            border-bottom: 2px solid #1e3c72;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin: 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #1e3c72;
+            color: #fff;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #1e3c72;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html">Homepage</a>
+            <a href="#">GitHub Repository</a>
+            <a href="courseReflection.html">Course Reflection</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Optimized Ambulance Routing System Using Graph Algorithms</h1>
+
+        <section class="container">
+            <h2>Sustainable Development Goals (SDGs)</h2>
+            <div>
+                <h3>SDG 11: Sustainable Cities and Communities</h3>
+                <p>Objective: Make cities inclusive, safe, resilient, and sustainable.</p>
+                <ul>
+                    <li>Ensuring well-connected road networks and emergency vehicle access.</li>
+                    <li>Reducing response times in urban and rural areas.</li>
+                    <li>Integrating ambulance services into urban planning for better disaster management.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>SDG 9: Industry, Innovation, and Infrastructure</h3>
+                <p>Objective: Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.</p>
+                <ul>
+                    <li>Developing robust ambulance systems with advanced technology (e.g., GPS, real-time traffic monitoring).</li>
+                    <li>Establishing emergency infrastructure, such as helipads for air ambulances.</li>
+                    <li>Innovating in ambulance design for better medical care during transit.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Introduction</h2>
+            <p>The Optimized Ambulance Routing System Using Graph Algorithms aims to minimize the response and transportation time during emergencies. It leverages advanced graph-based algorithms like Dijkstra's Algorithm and A* (A-Star) to compute the most efficient routes.</p>
+            <ul>
+                <li><strong>Real-time Route Optimization:</strong> Uses live traffic data and road conditions to compute the shortest and fastest path.</li>
+                <li><strong>Graph Representation:</strong>
+                    <ul>
+                        <li>Vertices represent intersections, ambulance stations, hospitals, or key locations.</li>
+                        <li>Edges represent roads, with weights corresponding to distance, travel time, or traffic conditions.</li>
+                    </ul>
+                </li>
+                <li><strong>Algorithm Efficiency:</strong> Implements Dijkstra's Algorithm for finding the shortest path efficiently.</li>
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Example in Ambulance Routing</h2>
+            <p>Scenario:</p>
+            <ul>
+                <li>Start: Ambulance station.</li>
+                <li>Goal: Nearest hospital.</li>
+                <li>Factors: Traffic congestion, road conditions, distance.</li>
+            </ul>
+            <p>Using Dijkstra’s Algorithm:</p>
+            <ul>
+                <li>Computes the shortest path based purely on road distances or weighted edges updated with traffic conditions.</li>
+            </ul>
+            <p>Using A* Algorithm:</p>
+            <ul>
+                <li>Combines a heuristic like Euclidean distance with real-time traffic delays for efficient routing.</li>
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Conclusion</h2>
+            <ul>
+                <li>Use Dijkstra's Algorithm when simplicity and guaranteed shortest paths are required in static networks.</li>
+                <li>Use A* Algorithm for dynamic environments or when computational efficiency is critical.</li>
+            </ul>
+            <p>Both algorithms can be enhanced by integrating GPS data, real-time traffic feeds, and machine learning models, making them highly effective for ambulance routing in smart cities.</p>
+        </section>
+
+        <section class="container">
+            <h2>Algorithm Execution</h2>
+            <h3>C++ Code: Dijkstra's Algorithm for Ambulance Routing</h3>
+            <p><a href="path_to_dijkstra_code.cpp" target="_blank">Download Dijkstra's Code</a></p>
+            <h4>Code Execution Efficiency</h4>
+            <p>Efficiency: O((V + E) * log V) – where V is the number of vertices and E is the number of edges.</p>
+        </section>
+
+        <section class="container">
+            <h2>Input and Output Format</h2>
+            <h3>Input Format</h3>
+            <ul>
+                <li>Number of nodes and edges.</li>
+                <li>Edges in the format: <code>node1 node2 weight</code>.</li>
+                <li>Start node (ambulance location) and target node (hospital location).</li>
+            </ul>
+            <h3>Example Input</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Node 1</th>
+                        <th>Node 2</th>
+                        <th>Weight (Distance or Time)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Output Format</h3>
+            <p>Shortest distance: 6</p>
+            <p>Path: 0 → 2 → 3 → 4</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ambulance Routing System. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
