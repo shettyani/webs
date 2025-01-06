@@ -3,72 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimizing Transportation Networks</title>
+    <title>Optimizing Transportation Network for Medical Supplies</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         header {
-            background: #007bff;
-            color: #fff;
+            background: #007BFF;
+            color: white;
             padding: 1rem 0;
             text-align: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        main {
-            padding: 1rem;
-        }
-        section {
-            background: #fff;
-            margin: 1rem 0;
-            padding: 1rem;
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        section h2 {
+        h1, h2, h3 {
             color: #333;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 0.5rem;
         }
         ul {
-            margin: 0;
-            padding: 0 1.5rem;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
-        li {
+        ul li {
             margin: 0.5rem 0;
         }
-        pre {
-            background: #f8f9fa;
+        code {
+            background: #f8f8f8;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        .highlight {
+            background-color: #e9f5ff;
+            border-left: 4px solid #007BFF;
             padding: 1rem;
-            border-radius: 5px;
-            overflow-x: auto;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        article h3 {
-            margin-top: 1rem;
-            color: #555;
-        }
-        footer {
-            background: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 1rem;
-        }
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 1rem auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
         }
     </style>
 </head>
@@ -76,162 +53,118 @@
     <header>
         <h1>Optimizing the Transportation Network for Medical Supplies</h1>
     </header>
+    <div class="container">
+        <h2>1. Introduction</h2>
+        <p>The efficient transportation of medical supplies, such as vaccines and medicines, is critical for healthcare systems worldwide. Minimizing transportation costs while ensuring timely delivery to all locations is a significant logistical challenge. Algorithms like Prim's and Kruskal's, which are designed to compute the Minimum Spanning Tree (MST), provide an optimal solution by connecting all nodes in a network with minimal cost. This document delves into the application of these algorithms in building a cost-effective transportation network.</p>
 
-    <main>
-        <section id="introduction">
-            <h2>1. Introduction</h2>
-            <p>The efficient transportation of medical supplies, such as vaccines and medicines, is critical for healthcare systems worldwide. Minimizing transportation costs while ensuring timely delivery to all locations is a significant logistical challenge. Algorithms like Prim's and Kruskal's, which are designed to compute the Minimum Spanning Tree (MST), provide an optimal solution by connecting all nodes in a network with minimal cost. This document delves into the application of these algorithms in building a cost-effective transportation network.</p>
-        </section>
+        <h2>2. Problem Definition</h2>
+        <p>The goal is to design a transportation network connecting suppliers, warehouses, and hospitals while minimizing the total cost. Each node in the network represents a facility (e.g., supplier, warehouse, hospital), and edges represent transportation routes with associated costs.</p>
 
-        <section id="problem-definition">
-            <h2>2. Problem Definition</h2>
-            <p>The goal is to design a transportation network connecting <strong>suppliers</strong>, <strong>warehouses</strong>, and <strong>hospitals</strong> while minimizing the total cost. Each node in the network represents a facility (e.g., supplier, warehouse, hospital), and edges represent transportation routes with associated costs.</p>
-
-            <h3>Example</h3>
+        <div class="highlight">
+            <strong>Example:</strong>
             <ul>
-                <li><strong>Nodes:</strong> Supplier (S1), Supplier (S2), Warehouse (W1), Warehouse (W2), Hospital (H1), Hospital (H2).</li>
-                <li><strong>Edges with costs:</strong>
-                    <pre>
-S1 -> W1 : Cost = 10
-S1 -> W2 : Cost = 15
-W1 -> H1 : Cost = 20
-W2 -> H2 : Cost = 25
-H1 -> H2 : Cost = 30
-                    </pre>
-                </li>
+                <li>Nodes: Supplier (S1), Supplier (S2), Warehouse (W1), Warehouse (W2), Hospital (H1), Hospital (H2).</li>
+                <li>Edges with costs:</li>
+                <ul>
+                    <li>S1 -> W1 : Cost = 10</li>
+                    <li>S1 -> W2 : Cost = 15</li>
+                    <li>W1 -> H1 : Cost = 20</li>
+                    <li>W2 -> H2 : Cost = 25</li>
+                    <li>H1 -> H2 : Cost = 30</li>
+                </ul>
             </ul>
-        </section>
+        </div>
 
-        <section id="algorithms">
-            <h2>3. Algorithms for Optimization</h2>
+        <h2>3. Algorithms for Optimization</h2>
 
-            <article id="prim-algorithm">
-                <h3>3.1 Prim's Algorithm</h3>
-                <p><strong>Use Case:</strong> Suitable for dense networks with many connections.</p>
-                <p><strong>Approach:</strong>
-                    <ul>
-                        <li>Start from any node.</li>
-                        <li>Incrementally add the smallest edge that connects an unvisited node.</li>
-                    </ul>
-                </p>
-                <p><strong>Advantages:</strong>
-                    <ul>
-                        <li>Efficient for scenarios with high connectivity.</li>
-                        <li>Dynamically adaptable to adding nodes.</li>
-                    </ul>
-                </p>
-                <p><strong>Time Complexity:</strong> O(E log V), where E is the number of edges and V is the number of nodes.</p>
+        <h3>3.1 Prim's Algorithm</h3>
+        <p><strong>Use Case:</strong> Suitable for dense networks with many connections.</p>
+        <p><strong>Approach:</strong></p>
+        <ul>
+            <li>Start from any node.</li>
+            <li>Incrementally add the smallest edge that connects an unvisited node.</li>
+            <li>Ensure no cycles are formed.</li>
+        </ul>
+        <p><strong>Advantages:</strong></p>
+        <ul>
+            <li>Efficient for scenarios with high connectivity.</li>
+            <li>Dynamically adaptable to adding nodes.</li>
+            <li>Provides a step-by-step expansion of the MST.</li>
+        </ul>
+        <p><strong>Time Complexity:</strong> O(E log V), where E is the number of edges and V is the number of nodes.</p>
 
-                <h4>Workflow</h4>
-                <ol>
-                    <li>Initialize a priority queue to store edges by cost.</li>
-                    <li>Mark the starting node as visited.</li>
-                    <li>Add the smallest edge connecting an unvisited node to the MST.</li>
-                    <li>Repeat until all nodes are connected.</li>
-                </ol>
-            </article>
+        <h3>3.2 Kruskal's Algorithm</h3>
+        <p><strong>Use Case:</strong> Best for sparse networks with fewer connections.</p>
+        <p><strong>Approach:</strong></p>
+        <ul>
+            <li>Sort all edges by cost.</li>
+            <li>Add edges one by one to the MST, ensuring no cycles.</li>
+            <li>Use a Union-Find data structure to detect and avoid cycles.</li>
+        </ul>
+        <p><strong>Advantages:</strong></p>
+        <ul>
+            <li>Straightforward implementation.</li>
+            <li>Effective for pre-sorted edge lists.</li>
+            <li>Adaptable to networks with changing edge costs.</li>
+            <li>Suitable for parallel processing due to independent edge evaluations.</li>
+        </ul>
+        <p><strong>Time Complexity:</strong> O(E log E).</p>
 
-            <article id="kruskal-algorithm">
-                <h3>3.2 Kruskal's Algorithm</h3>
-                <p><strong>Use Case:</strong> Best for sparse networks with fewer connections.</p>
-                <p><strong>Approach:</strong>
-                    <ul>
-                        <li>Sort all edges by cost.</li>
-                        <li>Add edges one by one to the MST, ensuring no cycles.</li>
-                    </ul>
-                </p>
-                <p><strong>Advantages:</strong>
-                    <ul>
-                        <li>Straightforward implementation.</li>
-                        <li>Effective for pre-sorted edge lists.</li>
-                    </ul>
-                </p>
-                <p><strong>Time Complexity:</strong> O(E log E).</p>
-            </article>
-        </section>
+        <h2>4. Implementation Details</h2>
+        <p><strong>Input Requirements:</strong></p>
+        <ul>
+            <li>Nodes: Represent suppliers, warehouses, and hospitals.</li>
+            <li>Edges: Represent transportation routes with associated costs.</li>
+            <li>Dynamic Updates: Allow adding/removing nodes and updating costs.</li>
+        </ul>
+        <p><strong>Algorithm Selection:</strong></p>
+        <ul>
+            <li>Use Prim's algorithm for dense networks.</li>
+            <li>Use Kruskal's algorithm for sparse networks.</li>
+        </ul>
 
-        <section id="implementation-details">
-            <h2>4. Implementation Details</h2>
-            <h3>Input Requirements</h3>
+        <h2>5. Applications</h2>
+        <ul>
+            <li><strong>Medical Supply Chains:</strong> Optimize transportation of medicines, vaccines, and equipment.</li>
+            <li><strong>Emergency Response:</strong> Quickly design cost-effective delivery routes during crises.</li>
+            <li><strong>Inventory Management:</strong> Reallocate resources dynamically as demands fluctuate.</li>
+        </ul>
+
+        <h2>6. Case Study</h2>
+
+        <p><strong>Scenario:</strong> A pharmaceutical company needs to deliver vaccines to multiple hospitals via warehouses.</p>
+        <p><strong>Input Data:</strong></p>
+        <ul>
+            <li>Nodes: Supplier S1, Warehouses W1, W2, Hospitals H1, H2, H3.</li>
+            <li>Edges and Costs:</li>
             <ul>
-                <li><strong>Nodes:</strong> Represent suppliers, warehouses, and hospitals.</li>
-                <li><strong>Edges:</strong> Represent transportation routes with associated costs.</li>
-                <li><strong>Dynamic Updates:</strong> Allow adding/removing nodes and updating costs.</li>
+                <li>S1 -> W1 : 10</li>
+                <li>S1 -> W2 : 15</li>
+                <li>W1 -> H1 : 20</li>
+                <li>W1 -> H2 : 25</li>
+                <li>W2 -> H2 : 30</li>
+                <li>W2 -> H3 : 35</li>
+                <li>H1 -> H3 : 40</li>
             </ul>
+        </ul>
 
-            <h3>Algorithm Selection</h3>
-            <p>
-                Use <strong>Prim's algorithm</strong> for dense networks and <strong>Kruskal's algorithm</strong> for sparse networks.
-            </p>
-        </section>
+        <p><strong>Computation:</strong></p>
+        <p><strong>Prim’s Algorithm:</strong></p>
+        <ol>
+            <li>Start from S1.</li>
+            <li>Selected edges: S1 -> W1 (10), W1 -> H1 (20), W1 -> H2 (25), H2 -> H3 (30).</li>
+            <li>Total Cost: 85.</li>
+        </ol>
 
-        <section id="visualization">
-            <h2>5. Visualization and Features for the Website</h2>
-            <h3>Features</h3>
-            <ul>
-                <li>Graphical Input: Interactive maps where users can add nodes and edges.</li>
-                <li>Algorithm Selection: Let users choose between Prim’s and Kruskal’s algorithms.</li>
-                <li>Dynamic Updates: Recompute MST dynamically when the network changes.</li>
-            </ul>
+        <p><strong>Kruskal’s Algorithm:</strong></p>
+        <ol>
+            <li>Sorted Edges: S1->W1 (10), S1->W2 (15), W1->H1 (20), W1->H2 (25), W2->H2 (30), W2->H3 (35), H1->H3 (40).</li>
+            <li>Selected edges: S1 -> W1 (10), W1 -> H1 (20), W1 -> H2 (25), H2 -> H3 (30).</li>
+            <li>Total Cost: 85.</li>
+        </ol>
 
-            <h3>Visualization</h3>
-            <p>Nodes as markers (e.g., red for hospitals, blue for warehouses). Highlight selected routes in the MST and display edge costs and total network cost.</p>
-        </section>
-
-        <section id="applications">
-            <h2>6. Applications</h2>
-            <ul>
-                <li><strong>Medical Supply Chains:</strong> Optimize transportation of medicines, vaccines, and equipment.</li>
-                <li><strong>Emergency Response:</strong> Quickly design cost-effective delivery routes during crises.</li>
-                <li><strong>Inventory Management:</strong> Reallocate resources dynamically as demands fluctuate.</li>
-            </ul>
-        </section>
-
-        <section id="case-study">
-            <h2>7. Case Study</h2>
-            <h3>Scenario</h3>
-            <p><strong>Situation:</strong> A pharmaceutical company needs to deliver vaccines to multiple hospitals via warehouses.</p>
-
-            <h3>Input Data</h3>
-            <pre>
-Nodes: Supplier S1, Warehouses W1, W2, Hospitals H1, H2, H3
-Edges and Costs:
-S1 -> W1 : 10
-S1 -> W2 : 15
-W1 -> H1 : 20
-W1 -> H2 : 25
-W2 -> H2 : 30
-W2 -> H3 : 35
-H1 -> H3 : 40
-            </pre>
-
-            <h3>Computation</h3>
-            <p><strong>Prim’s Algorithm:</strong></p>
-            <ul>
-                <li>Start from S1.</li>
-                <li>Selected edges: S1 -> W1 (10), W1 -> H1 (20), W1 -> H2 (25), H2 -> H3 (30).</li>
-                <li>Total Cost: 85.</li>
-            </ul>
-
-            <p><strong>Kruskal’s Algorithm:</strong></p>
-            <ul>
-                <li>Sorted Edges: S1->W1 (10), S1->W2 (15), W1->H1 (20), W1->H2 (25), W2->H2 (30), W2->H3 (35), H1->H3 (40).</li>
-                <li>Selected edges: S1 -> W1 (10), W1 -> H1 (20), W1 -> H2 (25), H2 -> H3 (30).</li>
-                <li>Total Cost: 85.</li>
-            </ul>
-        </section>
-
-        <section id="conclusion">
-            <h2>8. Conclusion</h2>
-            <p>Optimizing transportation networks for medical supplies is crucial for cost reduction and timely delivery. Using MST algorithms like Prim’s and Kruskal’s provides an effective solution for building efficient networks. When integrated into interactive platforms, these algorithms enable dynamic and real-time decision-making, benefiting healthcare systems globally.</p>
-        </section>
-       <div>
-          <a href="prims&kruskal.cpp" style="text-decoration:none;">Prims and Kruskal Code</a> 
-       </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Medical Transportation Optimization</p>
-    </footer>
+        <h2>7. Conclusion</h2>
+        <p>Optimizing transportation networks for medical supplies is crucial for cost reduction and timely delivery. Using MST algorithms like Prim’s and Kruskal’s provides an effective solution for building efficient networks. These algorithms enable dynamic and real-time decision-making, benefiting healthcare systems globally.</p>
+    </div>
 </body>
 </html>
